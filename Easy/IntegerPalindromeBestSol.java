@@ -5,23 +5,23 @@ public class IntegerPalindromeBestSol {
         System.out.println(checkPalindrome(2332));
     }
     public static boolean checkPalindrome(int x){
-        if(x < 0 || (x%10 ==0 && x!=0)){
-            return false;
-
-        }
-        int reverseTillMid =0;
-        while (x> reverseTillMid){
-            reverseTillMid = reverseTillMid*10+x%10; //  1221;  1, 12 x=12
-            x=x/10;                                  // 122, 12, reverseTillMid =12
-
-        }
-        if(reverseTillMid/10 == x || reverseTillMid==x){
-            return true;
-        }
-        return false;
+        int reverse = 0;
+        int originalNumber =x;
+       if(x==0){
+           return true;
+       }
+       if(x<0 || x%10 == 0){
+           return false;
+       }
+       while (x>0){
+           int reminder = x%10;
+           reverse = reverse*10+reminder;
+           x= x/10;
+       }
+       return x == originalNumber;
     }
 /*
-Time Complexity: O(log₁₀(n))
+Time Complexity: O
 ✅ Space Complexity: O(1)
  */
 
