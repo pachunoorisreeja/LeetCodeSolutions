@@ -1,25 +1,24 @@
 package Easy;
-
+//https://leetcode.com/problems/majority-element/description/
+import java.util.HashMap;
 import java.util.Stack;
 
 public class MajorityElement {
 
     public static int majorityElement(int[] nums) {
-        int value = nums.length/2;
-        int count = 0;
-        for(int i=0;i<nums.length;i++){
-            for(int j=i+1;j<nums.length;j++){
-                if(nums[i]==nums[j]) {
-                    count++;
-                }
-               }
-            if (count > value){
-                count = nums[i];
-                break;
-            }
+        HashMap<Integer, Integer> hash = new HashMap<>();
+        int res = 0;
+        int majority = nums.length/2;
 
-    }
-      return count;
+        for (int n : nums) {
+            hash.put(n, 1 + hash.getOrDefault(n, 0));
+            if (hash.get(n) > majority) {
+                res = n;
+                //majority = hash.get(n);
+            }
+        }
+
+        return res;
     }
 
     public static void main(String[] args) {

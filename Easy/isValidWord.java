@@ -1,8 +1,10 @@
 package Easy;
-
+import java.util.Scanner;
 public class isValidWord {
     public static void main(String[] args) {
-        System.out.println(isValid("234Adas"));
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.println(isValid(s));
     }
     public static boolean isValid(String word) {
         char chars[] = word.toCharArray();

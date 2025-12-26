@@ -1,5 +1,5 @@
 package Easy;
-
+//https://leetcode.com/problems/contains-duplicate/description/
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -25,6 +25,8 @@ public class ContainsDuplicateII217 {
         return false;
     }
     public static boolean method2(int[] nums) {
+        /* Given an integer array nums, return true if any value appears
+        at least twice in the array, and return false if every element is distinct. */
        /* Time & Space Complexity
         Approach	Time Complexity	Space Complexity
         HashSet (previous)	O(n)	O(n)

@@ -1,6 +1,6 @@
 package Easy;
 import java.util.*;
-public class FirstUniqueCharacterinaString {
+public class FirstUniqueCharacterinaString387 {
     public static void main(String[] args) {
         System.out.println(firstUniqChar("leetcode"));
     }
